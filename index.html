@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cuestionario de criptografía asimétrica con preguntas aleatorias.">
+  <title>Cuestionario: Criptografía Asimétrica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="tarjeta">
+
+    <!-- ===== PANTALLA 1: INICIO ===== -->
+    <section id="pantalla-inicio" class="pantalla activa">
+      <h1>Cuestionario: Criptografía Asimétrica</h1>
+      <p class="descripcion">Elige cuántas preguntas quieres responder (de 1 a 40).</p>
+
+      <div class="selector">
+        <label for="cantidad-rango">Número de preguntas</label>
+        <div class="selector-controles">
+          <input type="range" id="cantidad-rango" min="1" max="40" value="40">
+          <input type="number" id="cantidad-numero" min="1" max="40" value="40" inputmode="numeric" aria-label="Número de preguntas">
+        </div>
+      </div>
+
+      <button type="button" id="btn-comenzar" class="boton boton-principal">Comenzar</button>
+    </section>
+
+    <!-- ===== PANTALLA 2: CUESTIONARIO ===== -->
+    <section id="pantalla-quiz" class="pantalla">
+      <div class="progreso-info">
+        <span id="indicador-progreso">Pregunta 1 de 40</span>
+      </div>
+      <div class="barra-progreso" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Progreso del cuestionario">
+        <div id="barra-relleno" class="barra-relleno"></div>
+      </div>
+
+      <h2 id="texto-pregunta" class="pregunta"></h2>
+
+      <div id="contenedor-opciones" class="opciones"></div>
+
+      <p id="retroalimentacion" class="retroalimentacion" aria-live="polite"></p>
+
+      <button type="button" id="btn-siguiente" class="boton boton-principal" disabled>Siguiente</button>
+    </section>
+
+    <!-- ===== PANTALLA 3: RESULTADOS ===== -->
+    <section id="pantalla-resultados" class="pantalla">
+      <h1>Resultados</h1>
+      <p id="resumen-aciertos" class="resumen"></p>
+      <p id="resumen-fallos" class="resumen"></p>
+      <p id="resumen-total" class="resumen"></p>
+      <p id="resumen-porcentaje" class="porcentaje"></p>
+
+      <button type="button" id="btn-reiniciar" class="boton boton-principal">Intentar de nuevo</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
